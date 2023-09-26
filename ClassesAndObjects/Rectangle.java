@@ -10,10 +10,10 @@ public class Rectangle {
     int dlugosc;
     int pole;
 
-    public Rectangle(){
-        int wysokosc = 0;
-        int dlugosc = 0;
-        int pole = wysokosc*dlugosc;
+    public Rectangle(int x, int  y){
+        dlugosc = x;
+        wysokosc = y;
+        pole = wysokosc*dlugosc;
     }
 
     public void ustawWysokosc(int x){
@@ -33,14 +33,14 @@ public class Rectangle {
     }
     public static void main(String[] args){
 
-        Rectangle prostokat1 = new Rectangle();
-        Rectangle prostokat2 = new Rectangle();
+        Rectangle prostokat1 = new Rectangle(2, 7);
+        Rectangle prostokat2 = new Rectangle(3, 4);
         prostokat1.ustawDlugosc(4);
         prostokat1.ustawWysokosc(3);
         prostokat2.ustawDlugosc(7);
         prostokat2.ustawWysokosc(2);
-        prostokat1.obliczPole();
-        prostokat2.obliczPole();
+        //prostokat1.obliczPole();
+        //prostokat2.obliczPole();
         prostokat1.informacje();
         prostokat2.informacje();
     }
