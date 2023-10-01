@@ -20,8 +20,8 @@ public class SurfaceArea {
         return pole;
     }
     public static void main(String[] args){
-        System.out.println(SurfaceArea.circle(10));
-        System.out.println(SurfaceArea.rectangle(12, 4));
-        System.out.println(SurfaceArea.triangle(2, 6));
+        System.out.println(SurfaceArea.circle(3));
+        System.out.println(SurfaceArea.rectangle(4, 5));
+        System.out.println(SurfaceArea.triangle(3, 4));
     }
 }

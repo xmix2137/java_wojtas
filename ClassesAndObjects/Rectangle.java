@@ -13,7 +13,7 @@ public class Rectangle {
     public Rectangle(int x, int  y){
         dlugosc = x;
         wysokosc = y;
-        pole = wysokosc*dlugosc;
+        //pole = wysokosc*dlugosc;
     }
 
     public void ustawWysokosc(int x){
@@ -39,8 +39,8 @@ public class Rectangle {
         prostokat1.ustawWysokosc(3);
         prostokat2.ustawDlugosc(7);
         prostokat2.ustawWysokosc(2);
-        //prostokat1.obliczPole();
-        //prostokat2.obliczPole();
+        prostokat1.obliczPole();
+        prostokat2.obliczPole();
         prostokat1.informacje();
         prostokat2.informacje();
     }
