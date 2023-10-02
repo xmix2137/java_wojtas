@@ -46,6 +46,8 @@ public class Clock {
         this.minute = minute;
     }
 
+
+    
     public void setClock(int h, int m){
         this.hour = h;
         this.minute = m;
@@ -71,8 +73,22 @@ public class Clock {
         }
         
     }
+    
     public void addOneMinute(){
-        this.minute ++;
+        if (this.hour == this.alarmHour && this.minute == this.alarmMinute){
+            this.runAlarm();
+        }
+        else if (this.minute == 59 && this.hour == 23){
+            this.minute = 0;
+            this.hour = 0;
+        }
+        else if (this.minute == 59){
+            this.minute = 0;
+            this.hour +=1;
+        }
+        else {
+            this.minute ++;
+        }
     }
 
     public void setAlarm(int h, int m){
@@ -99,6 +115,10 @@ public class Clock {
         zegar.displayTime();
         zegar.addOneMinute();
         zegar.displayTime();
+        zegar.setAlarm(0, 01);
+        zegar.addOneMinute();
+        zegar.displayTime();
+        zegar.runAlarm();
         
     }
     
