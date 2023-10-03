@@ -33,8 +33,9 @@ Tip: pass student's grades to the constructor, as an array, in curly brackets, e
    
 package ClassStructure;
 
+import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class StudentGrades {
     String studentName;
@@ -47,10 +48,15 @@ public class StudentGrades {
 
     StudentGrades(String name, int numberOfGrades){
         this.studentName = name;
-        double grades1[] = {};
-        for(int i = 0; i<numberOfGrades+1; i++){
-            double random = ThreadLocalRandom.current().nextDouble(1.0, 5.0);
-            grades1[i] = random;
+        double grades1[] = new double[numberOfGrades];
+        for(int i = 0; i<numberOfGrades; i++){
+            //double random = ThreadLocalRandom.current().nextDouble(1.0, 5.0);
+            //grades1[i] = random;
+            double min = 1.0;
+            double max = 5.0;
+            Random r = new Random();
+            double randomValue = min + (max - min) * r.nextDouble();
+            grades1[i] = Math.round(randomValue);           
         }
         this.grades = grades1;
     }
@@ -60,11 +66,12 @@ public class StudentGrades {
         Scanner myObj = new Scanner(System.in);
         System.out.println("Write the number of grades: ");
         int licznik = myObj.nextInt();
-        double grades[] = {};
+        double grades[] = new double[licznik];
         for (int i =0; i <licznik; i ++){
             double grade = myObj.nextDouble();
             grades[i] = grade;
         }
+        myObj.close();
         this.grades = grades;
 
     }
@@ -102,7 +109,7 @@ public class StudentGrades {
 
     public double calculateGrades(){
         double counter = 0;
-        for (double grade : grades){
+        for (int i = 0; i < this.grades.length;i++){
             counter++;
         }
         return counter;
@@ -115,12 +122,13 @@ public class StudentGrades {
             suma += grade;
         }
         double avg = suma/liczba;
-        return avg;
+        return Math.round(avg);
     }
 
     public void display(){
         System.out.println("Name: "+this.studentName);
-        System.out.println("Grades: "+this.grades);
+        String gradesS = Arrays.toString(this.grades);
+        System.out.println("Grades: "+ gradesS);
         System.out.println("Number of grades: "+this.calculateGrades());
         System.out.println("Highest grade: "+this.getHighestGrade());
         System.out.println("Lowest grade: "+this.getLowestGrade());
@@ -132,7 +140,6 @@ public class StudentGrades {
         double[] tablica1 = {2.0, 3.0, 2.0, 4.5, 4.5};
         StudentGrades Amanda = new StudentGrades("Amanda", tablica);
         System.out.println(Amanda.studentName);
-        System.out.println(Amanda.grades);
         System.out.println(Amanda.getHighestGrade());
         System.out.println(Amanda.getLowestGrade());
         System.out.println(Amanda.calculateGrades());
@@ -141,7 +148,8 @@ public class StudentGrades {
         StudentGrades James = new StudentGrades("James", tablica1);
         James.display();
         StudentGrades Tom = new StudentGrades("Tom", 6);
-        //Tom.display();
+        Tom.display();
         StudentGrades Nikita = new StudentGrades("Nikita");
+        Nikita.display();
     }
 }

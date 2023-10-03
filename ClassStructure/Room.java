@@ -13,6 +13,10 @@ e.	Display a report on how many vacant beds are available
 Create a separate static method for each report. Pass a list of rooms (an array) to the defined static methods.
  */
 
+ /*23.	Modify the Room class. Define toString() method that returns information about the room status.
+  Replace the displayStatus() method with the defined toString() method. 
+  Tip: find out in the manual how to define and use the toString() method. */
+
 package ClassStructure;
 
 public class Room {
@@ -33,10 +37,12 @@ public class Room {
 
     public void checkin(String guest){
         this.guestName = guest;
+        this.occupied = true;
     }
 
     public void checkout(){
         this.guestName = "";
+        this.occupied = false;
     }
 
     public void isOccupied(){
@@ -53,6 +59,10 @@ public class Room {
         System.out.println("Is occupied: " + this.occupied);
         System.out.println("Guest name: " + this.guestName);
         System.out.println("Beds: " + beds);
+    }
+
+    public String toString(){
+        return "Number: "+this.number+ ", "+"Is occupied: " + this.occupied+", "+"Guest name: " + this.guestName+", "+"Beds: " + beds;
     }
 
     static void statusOfsingleRoom(Room[] rooms, int number){
@@ -116,11 +126,13 @@ public class Room {
         roomz[3] = pokoj3;
         roomz[4] = pokoj4;
         roomz[5] = pokoj5;
-        //Room.statusOfsingleRoom(roomz, 0);
-        //Room.fullRecord(roomz);
-        //Room.bedRecord(roomz, 2);
-        //Room.occupiedRecord(roomz);
+        Room.statusOfsingleRoom(roomz, 0);
+        Room.fullRecord(roomz);
+        Room.bedRecord(roomz, 2);
+        Room.occupiedRecord(roomz);
         Room.freeBedRecord(roomz);
+        Room pokoik = new Room(20, 4);
+        System.out.println(pokoik.toString());
 
     }
 

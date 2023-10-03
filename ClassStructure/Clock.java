@@ -46,8 +46,6 @@ public class Clock {
         this.minute = minute;
     }
 
-
-    
     public void setClock(int h, int m){
         this.hour = h;
         this.minute = m;
