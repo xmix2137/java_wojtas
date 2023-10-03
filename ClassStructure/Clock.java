@@ -33,8 +33,8 @@ package ClassStructure;
 public class Clock {
     int hour;
     int minute;
-    int alarmHour;
-    int alarmMinute;
+    int alarmHour = 30;
+    int alarmMinute = 30;
 
     Clock(){
         this.hour = 0;
@@ -74,11 +74,8 @@ public class Clock {
         
     }
     
-    public void addOneMinute(){
-        if (this.hour == this.alarmHour && this.minute == this.alarmMinute){
-            this.runAlarm();
-        }
-        else if (this.minute == 59 && this.hour == 23){
+    public void addOneMinute(){       
+        if (this.minute == 59 && this.hour == 23){
             this.minute = 0;
             this.hour = 0;
         }
@@ -88,6 +85,9 @@ public class Clock {
         }
         else {
             this.minute ++;
+        }
+        if (this.hour == this.alarmHour && this.minute == this.alarmMinute){
+            this.runAlarm();
         }
     }
 
@@ -118,7 +118,6 @@ public class Clock {
         zegar.setAlarm(0, 01);
         zegar.addOneMinute();
         zegar.displayTime();
-        zegar.runAlarm();
         
     }
     
