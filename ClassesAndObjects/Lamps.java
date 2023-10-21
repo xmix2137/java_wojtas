@@ -21,6 +21,13 @@ public class Lamps {
         else{
             System.out.println("Lamp is off");
         }
+
+    
+    }
+
+    public void showStatusv2(){
+        String status = isOn ? "Lamp is on" : "Lamp is off";
+        System.out.println(status);
     }
     public static void main(String[] args){
         Lamps Lamp1 = new Lamps();
@@ -28,6 +35,8 @@ public class Lamps {
 
         Lamp1.switchOn();
         Lamp2.switchOff();
+        Lamp1.showStatusv2();
+        Lamp2.showStatusv2();
         Lamp1.showStatus();
         Lamp2.showStatus();
 

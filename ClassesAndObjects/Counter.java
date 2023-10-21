@@ -6,11 +6,11 @@
 package ClassesAndObjects;
 
 public class Counter {
-    int counterValue;
+    int counterValue = 0;
 
-    public Counter(){
-        counterValue = 0;
-    }
+    //public Counter(){
+        //counterValue = 0;
+    //}
     public void addOne(){
         counterValue++;
     }

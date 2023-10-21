@@ -11,21 +11,21 @@ public class Rectangle {
     int pole;
 
     public Rectangle(int x, int  y){
-        dlugosc = x;
-        wysokosc = y;
-        //pole = wysokosc*dlugosc;
+        this.dlugosc = x;
+        this.wysokosc = y;
+        //this.pole = this.wysokosc*this.dlugosc;
     }
 
     public void ustawWysokosc(int x){
-        wysokosc = x;
+        this.wysokosc = x;
     }
     public void ustawDlugosc(int y){
-        dlugosc = y;
+        this.dlugosc = y;
     }
     public void informacje(){
-        System.out.println("Wysokosc: "+wysokosc);
-        System.out.println("Dlugosc: "+dlugosc);
-        System.out.println("Pole: "+pole);
+        System.out.println("Wysokosc: "+this.wysokosc);
+        System.out.println("Dlugosc: "+this.dlugosc);
+        System.out.println("Pole: "+this.pole);
     
     }
     public void obliczPole(){
@@ -42,6 +42,7 @@ public class Rectangle {
         prostokat1.obliczPole();
         prostokat2.obliczPole();
         prostokat1.informacje();
+        System.out.println();
         prostokat2.informacje();
     }
 }
