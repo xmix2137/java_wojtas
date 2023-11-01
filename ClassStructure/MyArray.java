@@ -87,6 +87,101 @@ public class MyArray {
         return nima;
     }
 
+    static boolean exist(int number, int[] array){
+        boolean exist = false;
+        for(int i = 0; i<array.length; i++){
+            if (array[i]==number){
+                exist = true;
+                break;
+            }
+        }
+        return exist;
+    }
+
+    static int secondMax(int[] array){
+        int max;
+        int sec_max;
+
+        if(array[0]>array[1]){
+            max = array[0];
+            sec_max = array[1];
+        }
+        else{
+            sec_max = array[0];
+            max = array[1];
+        }
+
+        for (int i = 2; i<array.length; i++){
+            if (array[i]>max){
+                sec_max = max;
+                max = array[i];        
+            }
+            else if (array[i]<max && array[i]>sec_max){
+                sec_max = array[i];
+            }
+        }
+
+        return sec_max;
+    }
+
+    static int lastColumn(int[][] array){
+        int suma = 0;
+        for (int i = 0; i<array.length; i++){
+            suma += array[i][array[i].length-1];
+        }
+        return suma;
+    }
+
+    static String swap(int[][] array){
+        int pomoc;
+
+        for(int i = 0; i<array.length; i++){
+            pomoc = array[i][0];
+            array[i][0] = array[i][array[i].length-1];
+            array[i][array[i].length-1] = pomoc;
+        }
+
+        String arr = "";
+
+        for(int i = 0; i<array.length; i++){
+            for (int j = 0; j<array[i].length; j++){
+                arr += array[i][j];
+                arr += " ";
+            }
+            arr+=",";
+        }
+
+        return arr;
+        
+    }
+
+    static String two2one(int[][] array){
+
+        String nowyArr = "";
+
+        int liczba = array.length*array[0].length;
+
+        int[] nowa = new int[liczba];
+
+        int licznik = 0;
+
+        for(int i = 0; i<array.length; i++){
+            for (int j = 0; j<array[i].length; j++){
+                nowa[licznik] = array[i][j];
+                licznik++;
+            }
+        }
+
+        for(int i = 0; i<nowa.length; i++){
+            nowyArr += nowa[i];
+            nowyArr += ", ";
+        }
+
+        return nowyArr;
+    }
+
+
+
     public static void main(String[] args){
 
         int arr[] = {1, 2, 3, 4, 5, 6, 7, -10, 9};
@@ -94,17 +189,19 @@ public class MyArray {
         int arr2[] = {3, 4, 3, 5, 7, 5, 2, 9, 3,};
         int arr3[] = {1, 2, 3, 4};
         int arr4[] = {1, 2, 3, 5};
+        int arr5[][] = {{1, 2, 3}, {8, 10, 12}, {2, 0, 9}};
 
         System.out.println(MyArray.even(arr));
         System.out.println(MyArray.positiveOdd(arr));
         System.out.println(MyArray.reverse(arr));
         System.out.println(MyArray.compare(arr1, arr2));
         System.out.println(MyArray.different(arr3, arr4));
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
+        System.out.println(MyArray.exist(2, arr4));
+        System.out.println(MyArray.secondMax(arr2));
+        System.out.println(MyArray.lastColumn(arr5));
+        System.out.println(MyArray.two2one(arr5));
+        System.out.println(MyArray.swap(arr5));
+        System.out.println(MyArray.two2one(arr5));
     }
     
 }
