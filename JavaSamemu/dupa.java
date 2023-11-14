@@ -1,4 +1,4 @@
-package Java_samemu;
+package JavaSamemu;
 
 public class dupa {
     public static void main(String[] args){

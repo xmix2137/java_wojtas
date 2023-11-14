@@ -1,4 +1,4 @@
-package Java_samemu;
+package JavaSamemu;
 
 public class Chujoza {
     int hour = 20;
