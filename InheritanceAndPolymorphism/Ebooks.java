@@ -18,13 +18,13 @@ public class Ebooks extends Books {
         return this.fileName;
     }
 
-    Ebooks(String title, String author, String fileName){
-        super(title, author);
+    Ebooks(String title, String fileName, Publisher publisher, int year, Writer writer){
+        super(title, publisher, year, writer);
         this.setFileName(fileName);
     }
 
     public void display(){
-        System.out.println("Tytuł: " + getTitle() + " Autor: " + getAuthor() + " Plik: "+getFileName());
+        System.out.println("Tytuł: " + getTitle() + " Plik: "+getFileName()+" Wydawca: "+ getPublisher().getName()+", "+getPublisher().getCity()+" Year of publication: "+getYear()+" Autor: "+getWriter().getName()+", "+getWriter().getSurname()+", "+getWriter().getGenre());
     }
 
 }

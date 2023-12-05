@@ -11,12 +11,18 @@ public class Library {
     Books[] library = new Books[5];
 
 
-    public static void main(String[] args){
-        Books book1 = new Books("Kamienie na szaniec", "Aleksander Kamiński");
-        Books book2 = new Books("Dżuma", "Aleksander Camus");
-        Ebooks ebook1 = new Ebooks("Dziady", "Adam Mickiewicz", "Dziady.txt");
-        Ebooks ebook2 = new Ebooks("Pan Tadeusz", "Adam Mickiewicz", "PanTadeusz.txt");
-        Audiobooks audiobook1 = new Audiobooks("Ogniem i mieczem", "Henryk Sienkiewicz", 180, 40);
+   public static void main(String[] args){
+        Publisher wydawca = new Publisher("Czarne", "Krakow");
+        Writer writer1 = new Writer("Aleksander", "Kamiński", "Literatura faktu");
+        Writer writer2 = new Writer("Aleksander", "Camus", "Proza");
+        Writer writer3 = new Writer("Adam", "Mickiewicz", "Poezja");
+        Writer writer4 = new Writer("Adam", "Mickiewicz", "Poezja");
+        Writer writer5 = new Writer("Henryk", "Sienkiewicz", "Poexja");
+        Books book1 = new Books("Kamienie na szaniec", wydawca, 1999, writer1);
+        Books book2 = new Books("Dżuma", wydawca, 2012, writer2);
+        Ebooks ebook1 = new Ebooks("Dziady", "Dziady.txt", wydawca, 2013, writer3);
+        Ebooks ebook2 = new Ebooks("Pan Tadeusz", "PanTadeusz.txt", wydawca, 1998, writer4);
+        Audiobooks audiobook1 = new Audiobooks("Ogniem i mieczem", 180, 40, wydawca, 1893, writer5);
         Library biblioteka = new Library();
 
         biblioteka.library[0] = book1;

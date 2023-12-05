@@ -28,13 +28,13 @@ class Audiobooks extends Books {
         return this.seconds;
     }
 
-    Audiobooks(String title, String author, int minutes, int seconds){
-        super(title, author);
+    Audiobooks(String title, int minutes, int seconds, Publisher publisher, int year, Writer writer){
+        super(title, publisher, year, writer);
         this.setMinutes(minutes);
         this.setSeconds(seconds);
     }
 
     public void display(){
-        System.out.println("Tytuł: " + getTitle() + " Autor: " + getAuthor()+" Minutes: "+getMinutes()+" Seconds: "+getSeconds());
+        System.out.println("Tytuł: " + getTitle()+" Minutes: "+getMinutes()+" Seconds: "+getSeconds()+" Wydawca: "+ getPublisher().getName()+", "+getPublisher().getCity()+" Year of publication: "+getYear()+" Autor: "+getWriter().getName()+", "+getWriter().getSurname()+", "+getWriter().getGenre());
     }
 }
