@@ -28,8 +28,8 @@ class Audiobooks extends Books {
         return this.seconds;
     }
 
-    Audiobooks(String title, int minutes, int seconds, Publisher publisher, int year, Writer writer){
-        super(title, publisher, year, writer);
+    Audiobooks(String title, int minutes, int seconds, Publisher publisher, int year, String name, String surname, String genre){
+        super(title, publisher, year, name, surname, genre);
         this.setMinutes(minutes);
         this.setSeconds(seconds);
     }

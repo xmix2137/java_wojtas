@@ -18,8 +18,8 @@ public class Ebooks extends Books {
         return this.fileName;
     }
 
-    Ebooks(String title, String fileName, Publisher publisher, int year, Writer writer){
-        super(title, publisher, year, writer);
+    Ebooks(String title, String fileName, Publisher publisher, int year, String name, String surname, String genre){
+        super(title, publisher, year, name, surname, genre);
         this.setFileName(fileName);
     }
 

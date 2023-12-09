@@ -20,11 +20,11 @@ public class Books{
 
     }
 
-    Books(String title, Publisher publisher, int year, Writer writer){
+    Books(String title, Publisher publisher, int year, String name, String surname, String genre){
         this.setTitle(title);
         this.setPublisher(publisher);
         this.setYear(year);
-        this.setWriter(writer);
+        this.setWriter(writer = new Writer(name, surname, genre));
         
     }
 

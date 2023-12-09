@@ -13,16 +13,16 @@ public class Library {
 
    public static void main(String[] args){
         Publisher wydawca = new Publisher("Czarne", "Krakow");
-        Writer writer1 = new Writer("Aleksander", "Kamiński", "Literatura faktu");
+        /*Writer writer1 = new Writer("Aleksander", "Kamiński", "Literatura faktu");
         Writer writer2 = new Writer("Aleksander", "Camus", "Proza");
         Writer writer3 = new Writer("Adam", "Mickiewicz", "Poezja");
         Writer writer4 = new Writer("Adam", "Mickiewicz", "Poezja");
-        Writer writer5 = new Writer("Henryk", "Sienkiewicz", "Poexja");
-        Books book1 = new Books("Kamienie na szaniec", wydawca, 1999, writer1);
-        Books book2 = new Books("Dżuma", wydawca, 2012, writer2);
-        Ebooks ebook1 = new Ebooks("Dziady", "Dziady.txt", wydawca, 2013, writer3);
-        Ebooks ebook2 = new Ebooks("Pan Tadeusz", "PanTadeusz.txt", wydawca, 1998, writer4);
-        Audiobooks audiobook1 = new Audiobooks("Ogniem i mieczem", 180, 40, wydawca, 1893, writer5);
+        Writer writer5 = new Writer("Henryk", "Sienkiewicz", "Poexja");*/
+        Books book1 = new Books("Kamienie na szaniec", wydawca, 1999, "Aleksander", "Kamiński", "Literatura faktu");
+        Books book2 = new Books("Dżuma", wydawca, 2012, "Aleksander", "Camus", "Proza");
+        Ebooks ebook1 = new Ebooks("Dziady", "Dziady.txt", wydawca, 2013, "Adam", "Mickiewicz", "Poezja");
+        Ebooks ebook2 = new Ebooks("Pan Tadeusz", "PanTadeusz.txt", wydawca, 1998, "Adam", "Mickiewicz", "Poezja");
+        Audiobooks audiobook1 = new Audiobooks("Ogniem i mieczem", 180, 40, wydawca, 1893, "Henryk", "Sienkiewicz", "Poexja");
         Library biblioteka = new Library();
 
         biblioteka.library[0] = book1;
