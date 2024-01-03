@@ -16,10 +16,10 @@ public class Cities {
     }
 
 
-    public Cities filter(String litera){
+    public Cities filter(char litera){
         ArrayList<String> arr = new ArrayList<>();
         for (int i = 0; i<this.cities.size(); i++){
-            if (cities.get(i).startsWith(litera)){
+            if (cities.get(i).startsWith(String.valueOf(litera))){
                 arr.add(cities.get(i));
             }
         }
@@ -49,6 +49,7 @@ public class Cities {
         miastaaa.add("Szczecin");
 
         Cities miasta = new Cities(miastaaa);
-        System.out.println(miasta.filter("S").cities());
+        //Cities(miastaaa).filter('S').cities();
+        System.out.println(miasta.filter('S').cities());
     }
 }
