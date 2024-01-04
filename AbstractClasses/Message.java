@@ -30,5 +30,5 @@ abstract class Message {
         return this.text.length();
     }
 
-    abstract String send();
+    abstract void send();
 }
